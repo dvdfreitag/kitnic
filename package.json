@@ -36,6 +36,7 @@
     "watch": "./scripts/watch.sh",
     "start": "./scripts/get_boards.coffee && npm run serve & npm run watch",
     "update": "./scripts/update_registry.coffee",
+    "boards": "./scripts/get_boards.coffee",
     "serve": "http-server build/"
   },
   "author": "Kaspar Emanuel",
@@ -45,7 +46,8 @@
     "browser-version": "^1.0.0",
     "lodash": "^4.0.0",
     "react-double-scrollbar": "0.0.9",
-    "react-hyperscript-helpers": "^1.1.0"
+    "react-hyperscript-helpers": "^1.1.0",
+    "react-numeric-input": "^2.0.4"
   },
   "sasslintConfig": "./src/.sass-lint.yml"
 }

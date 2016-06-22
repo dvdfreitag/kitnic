@@ -3,6 +3,7 @@ const React            = require('react');
 const oneClickBOM      = require('1-click-bom');
 const browserVersion   = require('browser-version');
 const _                = require('lodash');
+var NumericInput       = require('react-numeric-input');
 const BomInstallPrompt = require('./bom_install_prompt');
 const ExtensionCompatibilityPrompt  =
 require('./extension_compatibility_prompt');
@@ -74,7 +75,8 @@ const StoreButtons = React.createClass({
       parts: parts,
       onClick: onClick,
       extensionWaiting: true,
-      extensionPresence: 'unknown'
+      extensionPresence: 'unknown',
+      buyMultiplier: {times: 1, percent: 10}
     };
   },
   componentDidMount: function () {
@@ -179,6 +181,10 @@ const StoreButtons = React.createClass({
         <DirectStores items={this.props.items} />
         <div className='storeButtons'>
           {this.storeButtons()}
+          <div id='multiContainer'>
+            <NumericInput value={this.state.buyMultiplier.times} />
+            <NumericInput value={this.state.buyMultiplier.percent} format={(n) => `${n}%`} />
+          </div>
         </div>
       </div>
     );
